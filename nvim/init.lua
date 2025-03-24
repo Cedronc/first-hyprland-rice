@@ -2,10 +2,10 @@ require("config.lazy")
 require("config.keymaps")
 require("config.options")
 
--- ddydydy
 -- Import config files for plugins themself
 require("config.plugins.harpoon")
 require("config.plugins.oil")
+require("config.plugins.which-key")
 
 require("mason").setup({
     ui = {

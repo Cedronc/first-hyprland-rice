@@ -24,18 +24,3 @@ vim.cmd("set copyindent")
 vim.cmd("set expandtab")
 vim.cmd("set noshiftround")
 
--- Which-Key options
-local wk = require("which-key")
-wk.add({
-  { "<leader>f", group = "File" }, -- group
-  { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
-  { "<leader>e", "<cmd>Oil<cr>", desc = "File Explorer"},
-  { "<leader>fn", desc = "New File" },
-  { "<leader>w", proxy = "<c-w>", group = "Windows" }, -- proxy to window mappings
-  { "<leader>b", group = "Buffers", expand = function()
-      return require("which-key.extras").expand.buf()
-    end
-  }
-})
-
-
