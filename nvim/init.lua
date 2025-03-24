@@ -5,6 +5,8 @@ require("config.options")
 -- Import config files for plugins themself
 require("config.plugins.harpoon")
 require("config.plugins.oil")
+require("config.plugins.telescope")
+require("config.plugins.toggle-term")
 require("config.plugins.which-key")
 
 require("mason").setup({

@@ -24,3 +24,4 @@ vim.cmd("set copyindent")
 vim.cmd("set expandtab")
 vim.cmd("set noshiftround")
 
+vim.cmd("set hidden")
