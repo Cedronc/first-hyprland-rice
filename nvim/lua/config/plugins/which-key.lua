@@ -4,11 +4,18 @@ wk.add({
   { "<leader>f", group = "File" }, -- group
   { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
   { "<leader>fn", desc = "New File" },
-  { "<leader>e", 
-  function() 
-    require("oil").toggle_float() end,
-    desc = "File Explorer"},
-    { "<leader>w", proxy = "<c-w>", group = "Windows" }, -- proxy to window mappings
+  { "<leader>e", group = "Explorer" },
+  { "<leader>ee", 
+    function() 
+      require("oil").toggle_float() end,
+    desc = "File Explorer" 
+  },
+  { "<leader>ep", 
+    function() 
+      require("oil").open_preview() end,
+    desc = "File Preview" 
+  },
+  { "<leader>w", proxy = "<c-w>", group = "Windows" }, -- proxy to window mappings
   { "<leader>q", "<cmd>wq<cr>" }, 
   { "<leader>s", "<cmd>wa<cr>" }, 
   { "<leader>b", group = "Buffers", expand = function()
