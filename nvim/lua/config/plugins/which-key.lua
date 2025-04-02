@@ -11,8 +11,8 @@ wk.add({
     desc = "File Explorer" 
   },
   -- Toggle Term
-  { "<leader>t", group = "Git" },
-  { "<leader>ts", },
+  { "<leader>t", group = "Terminal" },
+  -- { "<leader>tf", },
   { "<leader>ts", },
   { "<leader>ts", },
 
