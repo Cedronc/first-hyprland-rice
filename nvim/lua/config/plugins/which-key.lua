@@ -11,10 +11,7 @@ wk.add({
     desc = "File Explorer" 
   },
   -- Toggle Term
-  { "<leader>t", group = "Terminal" },
-  -- { "<leader>tf", },
-  { "<leader>ts", },
-  { "<leader>ts", },
+  { "<leader>p", group = "Session" },
 
   -- Other
   { "<leader>w", proxy = "<c-w>", group = "Windows" }, -- proxy to window mappings

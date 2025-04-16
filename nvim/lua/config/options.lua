@@ -4,6 +4,8 @@
 vim.cmd([[colorscheme gruvbox]])
 vim.o.background = "dark" -- or "light" for light mode
 
+vim.o.colorcolumn = "80,120"
+
 vim.cmd("set relativenumber")
 vim.cmd("set hlsearch")
 vim.cmd("set showcmd")
