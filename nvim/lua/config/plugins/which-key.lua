@@ -13,14 +13,17 @@ wk.add({
   -- Toggle Term
   { "<leader>p", group = "Session" },
 
+  -- Random Groups
+  { "<leader>g", group = "Git" },
+
   -- Other
   { "<leader>w", proxy = "<c-w>", group = "Windows" }, -- proxy to window mappings
   { "<leader>q", "<cmd>wq<cr>" }, 
   { "<leader>s", "<cmd>wa<cr>" }, 
-  { "<leader>b", group = "Buffers", expand = function()
-      return require("which-key.extras").expand.buf()
-    end
-  }
+--   { "<leader>b", group = "Buffers", expand = function()
+--       return require("which-key.extras").expand.buf()
+--     end
+--   }
 })
 
 

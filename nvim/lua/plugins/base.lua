@@ -2,7 +2,22 @@ return {
   {
     'akinsho/toggleterm.nvim', version = "*", config = true
   },
-  -- nvim v0.8.0
+  {
+    "f-person/git-blame.nvim",
+    -- load the plugin at startup
+    event = "VeryLazy",
+    opts = {
+      -- your configuration comes here
+      -- for example
+      enabled = true,  -- if you want to enable the plugin
+      message_template = " <summary> • <date> • <author> • <<sha>>",
+      date_format = "%m-%d-%Y %H:%M:%S",
+      virtual_text_column = 1, 
+    },
+    keys = {
+      { "<leader>gb", "<cmd>GitBlameToggle<cr>", desc = "Toggle Git Blame" }
+    }
+  },
   {
     "kdheepak/lazygit.nvim",
     lazy = false,
@@ -19,7 +34,7 @@ return {
       "nvim-lua/plenary.nvim",
     },
     keys = {
-      { "<leader>g", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+      { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
     }
   },
   {
