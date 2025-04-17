@@ -1,22 +1,3 @@
---- Snippets 
---          function()
---            local in_git = Snacks.git.get_root() ~= nil
---            local cmds = {
---              {
---                title = "Open Issues",
---                cmd = "gh issue list -L 3",
---                key = "i",
---                action = function()
---                  vim.fn.jobstart("gh issue list --web", { detach = true })
---                end,
---                icon = " ",
---                height = 3,
---              },
-
-  -----------------------------------------------------------------------------
-  -- 🎨 Snacks (QoL plugins)
-  -- https://github.com/folke/snacks.nvim?tab=readme-ov-file
-  -----------------------------------------------------------------------------
 return {
   {
     "folke/snacks.nvim",
@@ -48,6 +29,13 @@ return {
           { section = "header" },
           { section = "keys", gap = 1, padding = 1 },
           {
+            section = "terminal",
+            cmd = "pipes.sh -t 3",
+            pane = 2,
+            height = 5,
+            padding = 1,
+          },
+          {
             pane = 2,
             icon = " ",
             desc = "Browse Repo",
@@ -59,8 +47,8 @@ return {
           },
           { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
           { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+          { pane = 2, icon = " ", title = "Sessions", section = "session", indent = 2, padding = 1 },
 
-          -- Git Stuff in its own pane (pane 3)
           function()
             local in_git = Snacks.git.get_root() ~= nil
             local cmds = {
