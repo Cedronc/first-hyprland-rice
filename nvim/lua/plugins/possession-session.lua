@@ -6,7 +6,6 @@ return {
     config = function()
       require('telescope').load_extension('possession')
       require("possession").setup({
-        autosave = false,
         commands = {
           save = 'SSave',
           load = 'SLoad',
