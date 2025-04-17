@@ -20,8 +20,7 @@ return {
           open = "out_cubic",
           close = "in_quad",
         },
-        fps = 60, -- Higher = smoother
-        exclude_filetypes = { "lazy", "TelescopePrompt", "nofile" }, -- don't animate here
+        fps = 144, -- Higher = smoother
       },
       bigfile = { enabled = true },
       dashboard = {
@@ -47,8 +46,6 @@ return {
           },
           { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
           { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-          { pane = 2, icon = " ", title = "Sessions", section = "session", indent = 2, padding = 1 },
-
           function()
             local in_git = Snacks.git.get_root() ~= nil
             local cmds = {
