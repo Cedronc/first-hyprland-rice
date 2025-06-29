@@ -32,6 +32,7 @@ return {
     keys = { 
       { "<leader>gb", "<cmd>Gitsigns blame<CR>", desc = "Toggle git blame."},
       { "<leader>gl", "<cmd>Gitsigns blame_line<CR>", desc = "Show git blame for line."},
+      { "<leader>gT", "<cmd>Gitsigns toggle_current_line_blame<CR>", desc = "Toggle git blame for line."},
     },
   },
   {

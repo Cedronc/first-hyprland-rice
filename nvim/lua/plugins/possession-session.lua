@@ -36,7 +36,7 @@ return {
       { "<leader>ps", "<cmd>SSave<cr>", desc = "Save session" },
       { "<leader>pl", "<cmd>Telescope possession list<cr>", desc = "Load session" },
       { "<leader>pd", "<cmd>SDelete<cr>", desc = "Delete session" },
-      { "<leader>pf", "<cmd>SList<cr>", desc = "Show current session" },
+      { "<leader>pf", "<cmd>SList<cr>", desc = "Show sessions" },
     }
   },
 
