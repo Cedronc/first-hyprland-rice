@@ -10,6 +10,7 @@
 
 
     "hyprland/workspaces": {
+        "on-click": "activate",
         "disable-scroll": true,
         "all-outputs": true,
         "format": "{name}",
@@ -23,13 +24,6 @@
             "7": "",
             "8": "󰣇",
         },
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": []
-        }
     },
 
     "hyprland/mode": {
