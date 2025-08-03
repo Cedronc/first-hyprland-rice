@@ -1,2 +1,19 @@
-/gh
-/iterm2
+# Alles negeren
+*
+
+# Behalve deze directories
+!nvim/
+!waybar/
+!wofi/
+!ghostty/
+!hypr/
+!spicetify/
+
+# Zorg ervoor dat de inhoud van die mappen ook niet genegeerd wordt
+!nvim/**
+!waybar/**
+!wofi/**
+!ghostty/**
+!hypr/**
+!spicetify/**
+
