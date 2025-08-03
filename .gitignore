@@ -1,19 +1,13 @@
-# Alles negeren
-*
+# Ignore All
+/*
 
-# Behalve deze directories
-!nvim/
-!waybar/
-!wofi/
-!ghostty/
-!hypr/
-!spicetify/
+# Exceptions
+!/nvim/
+!/waybar/
+!/wofi/
+!/ghostty/
+!/hypr/
+!/spicetify/
+!/neofetch/
 
-# Zorg ervoor dat de inhoud van die mappen ook niet genegeerd wordt
-!nvim/**
-!waybar/**
-!wofi/**
-!ghostty/**
-!hypr/**
-!spicetify/**
 
