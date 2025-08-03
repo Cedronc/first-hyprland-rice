@@ -1,0 +1,192 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 1,
+    "margin": 0,
+    "modules-left": ["hyprland/workspaces", "hyprland/mode", "custom/quote"],
+    "modules-center": [],
+    "modules-right": ["idle_inhibitor", "clock","pipewire", "backlight", "network", "cpu", "memory", "temperature", "battery", "disk", "custom/uptime", "custom/updates", "tray"],
+
+
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "disable-scroll": true,
+        "format": "{name}",
+        "format-icons": {
+            "1": "󰖟",
+            "2": "",
+            "3": "",
+            "4": "󰭹",
+            "5": "󰕧",
+            "6": "",
+            "7": "",
+            "8": "󰣇",
+        },
+    },
+
+    "hyprland/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "custom/playerctl": {
+        "format": " 󰐊 {}",
+        "return-type": "json",
+        "max-length": 40,
+        "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{artist}} - {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+    },
+
+    "custom/quote": {
+        "format": "󰚛 {}",
+        "interval": 3600,
+        "exec": "fortune -s",
+        "on-click": "fortune | yad --text-info --width=400 --height=200 --title='Fortune'",
+        "tooltip": true
+    },
+
+    "custom/updates": {
+        "format": "󰚰 {}",
+        "exec": "checkupdates | wc -l",
+        "interval": 3600,
+        "on-click": "ghostty -e sudo pacman -Syu",
+        "signal": 8
+    },
+
+    "custom/uptime": {
+        "format": "󰔟 {}",
+        "exec": "uptime -p | sed 's/up //; s/ days/d/; s/ hours/h/; s/ minutes/m/'",
+        "interval": 60
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰈈",
+            "deactivated": "󰈉"
+        },
+        "tooltip": true
+    },
+
+    "clock": {
+        "format": "󰃮 {:%H:%M %Y-%m-%d}",
+        "on-click": "gnome-calendar",
+    },
+
+    "cpu": {
+        "format": "󰘚 {usage}%",
+        "tooltip": true,
+        "interval": 1,
+        "on-click": "ghostty -e btop"
+    },
+
+    "memory": {
+        "format": "󰍛 {}%",
+        "interval": 1,
+        "on-click": "ghostty -e btop"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["󱃃", "󰔏", "󱃂"],
+        "on-click": "ghostty -e s-tui"
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "network": {
+        "format-wifi": "󰖩 {essid} ({signalStrength}%)",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname}: {ipaddr}",
+        "on-click": "ghostty -e nmtui"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "󰂰 {volume}%",
+        "format-bluetooth-muted": "󰂲 {icon}",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰥰",
+            "headset": "󰋎",
+            "phone": "󰏲",
+            "portable": "󰄝",
+            "car": "󰄋",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-"
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/",
+        "on-click": "ghostty -e gdu /"
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 5
+    }
+},
+{
+  "layer": "top",
+  "position": "bottom",
+  "exclusive": true,
+  "margin": "0 0 10 0",
+  "modules-center": [
+    "custom/terminal",
+    "custom/firefox",
+    "custom/files",
+    "custom/code"
+  ],
+
+  "custom/terminal": {
+    "format": "",
+    "tooltip": "Terminal",
+    "on-click": "foot"
+  },
+  "custom/firefox": {
+    "format": "",
+    "tooltip": "Firefox",
+    "on-click": "firefox"
+  },
+  "custom/files": {
+    "format": "",
+    "tooltip": "Files",
+    "on-click": "thunar"
+  },
+  "custom/code": {
+    "format": "",
+    "tooltip": "Editor",
+    "on-click": "code"
+  }
+}
+
