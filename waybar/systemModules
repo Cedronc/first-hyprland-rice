@@ -1,4 +1,20 @@
 {
+  "wlr/taskbar": {
+    "format": "{icon} {name}",
+    "icon-size": 16,
+    "all-outputs": false,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "wofi",
+      "rofi",
+      "kitty",
+      "ghostty",
+      "kitty-dropterm"
+      ],
+  },
+
   "custom/file_manager": {
     "format": " ",
     "on-click": "xdg-open . &",

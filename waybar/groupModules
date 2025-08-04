@@ -19,7 +19,6 @@
           },
     "modules": [
       "pulseaudio",
-      "pulseaudio#microphone",
     ]
   },
 
