@@ -1,4 +1,9 @@
 {
+  "custom/cava_mviz": {
+    "exec": "$HOME/.config/hypr/scripts/cavawaybar.sh",
+    "format": "{}"
+  },
+
   "wlr/taskbar": {
     "format": "{icon} {name}",
     "icon-size": 16,
@@ -10,7 +15,7 @@
       "wofi",
       "rofi",
       "kitty",
-      "ghostty",
+      "com.mitchellh.ghostty",
       "kitty-dropterm"
       ],
   },

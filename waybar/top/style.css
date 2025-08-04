@@ -185,6 +185,12 @@ window#waybar {
     color: @cyan;
     border-bottom-color: @cyan;
 }
+#custom-cava_mviz {
+  color: @orange;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 3px solid @orange;
+}
 
 #custom-playerctl.Paused {
     color: @orange;

@@ -10,12 +10,17 @@
     "margin": 0,
     "ipc": true,
     "modules-left": ["hyprland/workspaces", ],
-    "modules-center": ["group/audio", "group/app_drawer", "clock"],
+    "modules-center": ["custom/cava_mviz", "clock", "group/audio", "group/app_drawer"],
     "modules-right": ["idle_inhibitor", "pipewire", "backlight", "network", "cpu", "memory", "temperature", "battery", "disk", "custom/uptime", "custom/updates", "tray"],
 
 
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "custom/cava_mviz": {
+      "exec": "$HOME/.config/hypr/scripts/cavawaybar.sh",
+      "format": "{}",
     },
 
     "custom/quote": {
@@ -136,5 +141,3 @@
         "spacing": 5
     }
 },
-
-
