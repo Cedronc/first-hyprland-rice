@@ -1,0 +1,43 @@
+{
+  "custom/file_manager": {
+    "format": " ",
+    "on-click": "xdg-open . &",
+    "tooltip": true,
+    "tooltip-format": "File Manager",
+  },
+
+  "custom/tty": {
+    "format": " ",
+    "on-click": "$HOME/.config/hypr/scripts/WaybarScripts.sh --term",
+    "tooltip": true,
+    "tooltip-format": "Launch Terminal",
+  },
+
+  "custom/browser": {
+    "format": " ",
+    "on-click": "xdg-open https://",
+    "tooltip": true,
+    "tooltip-format": "Launch Browser",
+  },
+
+  "custom/settings": {
+    "format": " ",
+    "on-click": "$HOME/.config/hypr/scripts/Kool_Quick_Settings.sh",
+    "tooltip": true,
+    "tooltip-format": "Launch KooL Hyprland Settings Menu",
+  },
+
+  "custom/reboot": {
+      "format": "󰜉",
+      "on-click": "systemctl reboot",
+      "tooltip": true,
+    "tooltip-format": "Left Click: Reboot",
+  },
+      
+  "custom/quit": {
+      "format": "󰗼",
+      "on-click": "hyprctl dispatch exit",
+      "tooltip": true,
+    "tooltip-format": "Left Click: Exit Hyprland",
+  },
+}
