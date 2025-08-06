@@ -1,0 +1,18 @@
+(defwidget control-center []
+  (box :orientation "vertical" :class "popup" :space-evenly false :halign "end"
+    (box :class "sliders"
+      (label :text "󰕾")
+      (slider :min 0 :max 100 :value 60 :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%")
+    )
+    (box :class "toggles"
+      (button :class "toggle" :onclick "toggle-dark" "🌙 Dark Mode")
+      (button :class "toggle" :onclick "toggle-wifi" "📶 Wi-Fi")
+      (button :class "toggle" :onclick "toggle-mic" "🎙 Mic")
+    )
+    (box :class "power-buttons"
+      (button :onclick "loginctl lock-session" " Lock")
+      (button :onclick "loginctl terminate-user $USER" "󰍃 Logout")
+      (button :onclick "poweroff" "⏻ Power Off")
+    )
+  )
+)

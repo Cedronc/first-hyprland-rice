@@ -1,0 +1,44 @@
+
+$background: #282828;
+$background-light: #3c3836;
+$foreground: #ebdbb2;
+$orange: #d65d0e;
+$yellow: #d79921;
+
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 16px;
+  color: $foreground;
+}
+
+.popup {
+  background-color: $background;
+  border: 2px solid $orange;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.sliders slider {
+  trough {
+    background-color: $background-light;
+    border-radius: 8px;
+    min-height: 10px;
+  }
+  highlight {
+    background-color: $yellow;
+    border-radius: 8px;
+  }
+}
+
+button.toggle {
+  background-color: $background-light;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin: 4px 0;
+  transition: background 0.2s;
+}
+
+button.toggle:hover {
+  background-color: $orange;
+}
