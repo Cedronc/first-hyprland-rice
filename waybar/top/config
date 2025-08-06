@@ -5,13 +5,13 @@
     ],
     "layer": "top",
     "position": "top",
-    "height": 30,
-    "spacing": 1,
+    "spacing": 2,
+    "height": 25,
     "margin": 0,
     "ipc": true,
-    "modules-left": ["hyprland/workspaces", ],
-    "modules-center": ["custom/cava_mviz", "clock", "group/audio", "group/app_drawer"],
-    "modules-right": ["idle_inhibitor", "pipewire", "backlight", "network", "cpu", "memory", "temperature", "battery", "disk", "custom/uptime", "custom/updates", "tray"],
+    "modules-left": ["hyprland/workspaces", "custom/cava_mviz", "clock", "group/audio", "group/app_drawer"],
+    "modules-center": [],
+    "modules-right": ["idle_inhibitor", "backlight", "cpu", "memory", "temperature", "battery", "disk", "custom/uptime", "custom/updates", "tray"],
 
 
     "hyprland/mode": {
@@ -55,7 +55,7 @@
     },
 
     "clock": {
-        "format": "󰃮 {:%H:%M %Y-%m-%d}",
+        "format": "󰃮 {:%H:%M %m-%d}",
         "on-click": "gnome-calendar",
     },
 
@@ -67,7 +67,7 @@
     },
 
     "memory": {
-        "format": "󰍛 {}%",
+        "format": "󰻟 {}%",
         "interval": 1,
         "on-click": "ghostty -e btop"
     },

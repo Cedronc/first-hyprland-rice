@@ -3,9 +3,9 @@
     "$HOME/.config/waybar/systemModules",
     "$HOME/.config/waybar/groupModules",
   ],
-  "layer": "top",             // So it floats above windows
+  "layer": "bottom",             // So it floats above windows
   "position": "bottom",
-  "margin": "0 0 3 0",       // Adds space below
+  "margin": "0 0 0 0",       // Adds space below
   "name": "dock-bar",
   "modules-center": ["wlr/taskbar"],
 }

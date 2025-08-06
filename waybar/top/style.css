@@ -189,7 +189,7 @@ window#waybar {
   color: @orange;
   padding: 0px;
   margin: 0px;
-  border-bottom: 3px solid @orange;
+  border-bottom: 2.5px solid @orange;
 }
 
 #custom-playerctl.Paused {
