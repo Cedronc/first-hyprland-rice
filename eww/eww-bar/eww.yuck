@@ -1,4 +1,3 @@
-
 (defwidget bar []
   (centerbox :orientation "h"
     (workspaces)

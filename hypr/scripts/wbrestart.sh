@@ -4,4 +4,4 @@ killall -9 swaync
 killall -9 waybar
 
 swaync &
-waybar &
+waybar --config ~/.config/waybar/top/config --style ~/.config/waybar/top/style.css &

@@ -9,7 +9,7 @@ cd "$WALLPAPER_DIR" || exit 1
 IFS=$'\n'
 
 # === ICON-PREVIEW SELECTION WITH ROFI, SORTED BY NEWEST ===
-SELECTED_WALL=$(for a in $(ls -t *.jpg *.png *.gif *.jpeg 2>/dev/null); do echo -en "$a\0icon\x1f$a\n"; done | wofi -dmenu -G --allow-images -p "")
+SELECTED_WALL=$(for a in $(ls -t *.jpg *.png *.gif *.jpeg 2>/dev/null); do echo -en "$a\0icon\x1f$a\n"; done | rofi -dmenu -p "")
 [ -z "$SELECTED_WALL" ] && exit 1
 SELECTED_PATH="$WALLPAPER_DIR/$SELECTED_WALL"
 
@@ -17,3 +17,6 @@ SELECTED_PATH="$WALLPAPER_DIR/$SELECTED_WALL"
 hyprctl hyprpaper preload "$SELECTED_PATH"
 hyprctl hyprpaper wallpaper ",$SELECTED_PATH"
 hyprctl hyprpaper unload all
+
+wal -n -i "$SELECTED_PATH"
+matugen image "$SELECTED_PATH"
