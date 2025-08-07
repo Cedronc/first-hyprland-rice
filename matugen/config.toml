@@ -6,7 +6,7 @@ set = true
 [templates.waybar]
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
-post_hook = 'pkill -SIGUSR2 waybar'
+post_hook = 'wbrestart.sh'
 
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-colors.conf'
