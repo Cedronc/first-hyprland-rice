@@ -42,5 +42,6 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
+confirm-close-surface = false
 theme = GruvboxDark
 background-opacity = 0.75
