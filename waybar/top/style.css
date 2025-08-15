@@ -132,6 +132,10 @@ window#waybar {
     border-bottom-color: @playerctl-color;
 }
 
+#custom-reboot {
+  padding: 4px;
+}
+
 #custom-playerctl.Playing {
     color: @cyan;
     border-bottom-color: @cyan;

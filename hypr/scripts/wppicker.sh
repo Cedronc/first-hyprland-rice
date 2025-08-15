@@ -14,18 +14,15 @@ SELECTED_WALL=$(for a in $(ls -t *.jpg *.png *.gif *.jpeg 2>/dev/null); do echo 
 SELECTED_PATH="$WALLPAPER_DIR/$SELECTED_WALL"
 
 # === SET WALLPAPER ===
-# hyprctl hyprpaper preload "$SELECTED_PATH"
-# hyprctl hyprpaper wallpaper ",$SELECTED_PATH"
-# hyprctl hyprpaper unload all
 
 wal -n -i "$SELECTED_PATH"
 matugen image "$SELECTED_PATH"
 
-sleep 0.2
+hyprctl hyprpaper reload ,"$SELECTED_PATH"
 
-swww img "$SELECTED_PATH" \
-  --transition-type grow \
-  --transition-step 90 \
-  --transition-fps 60 \
-  --transition-duration 1.25 \
-  --transition-bezier .1,1,.1,1
+# swww img "$SELECTED_PATH" \
+#   --transition-type grow \
+#   --transition-step 90 \
+#   --transition-fps 60 \
+#   --transition-duration 1.25 \
+#   --transition-bezier .1,1,.1,1

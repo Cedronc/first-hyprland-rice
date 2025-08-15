@@ -4,6 +4,37 @@
     "format": "{}"
   },
 
+  "custom/notifications": {
+    "format": " ",
+    "on-click": "dunstctl history-pop"
+  },
+
+  "custom/reboot": {
+    "format": "reboot",
+    "on-click": "reboot"
+  },
+
+  "custom/nvidia": {
+      "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% 🌡️\\2°C/g'",
+      "format": "{} 🖥️",
+      "interval": 2
+  },
+
+  "custom/spotify": {
+      "format": "{icon} {}",
+      "escape": true,
+      "return-type": "json",
+      "max-length": 40,
+      "interval": 30, // Remove this if your script is endless and write in loop
+      "on-click": "playerctl -p spotify play-pause",
+      "on-click-right": "killall spotify",
+      "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+      "on-scroll-up" : "playerctl -p spotify next",
+      "on-scroll-down" : "playerctl -p spotify previous",
+      "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+      "exec-if": "pgrep spotify"
+  },
+
   "wlr/taskbar": {
     "format": "{icon} {name}",
     "icon-size": 16,
