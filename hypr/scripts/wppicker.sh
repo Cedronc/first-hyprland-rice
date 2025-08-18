@@ -15,10 +15,11 @@ SELECTED_PATH="$WALLPAPER_DIR/$SELECTED_WALL"
 
 # === SET WALLPAPER ===
 
-wal -n -i "$SELECTED_PATH"
-matugen image "$SELECTED_PATH"
+wal -q -n -i "$SELECTED_PATH"
+matugen -q -t scheme-fidelity image "$SELECTED_PATH" 
 
 hyprctl hyprpaper reload ,"$SELECTED_PATH"
+ln -sf -T "$SELECTED_PATH" ~/.config/hypr/scripts/current_wallpaper
 
 # swww img "$SELECTED_PATH" \
 #   --transition-type grow \

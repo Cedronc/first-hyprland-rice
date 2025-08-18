@@ -4,51 +4,41 @@
     "format": "{}"
   },
 
-  "custom/notifications": {
-    "format": " ",
-    "on-click": "dunstctl history-pop"
+  "custom/appmenu": {
+    "format": " ",
+    "on-click": "sleep 0.2;rofi -show drun -replace",
   },
 
-  "custom/reboot": {
-    "format": "reboot",
-    "on-click": "reboot"
+  "custom/uptime": {
+      "format": "󰔟 {}",
+      "exec": "uptime -p | sed 's/up //; s/ days/d/; s/ hours/h/; s/ minutes/m/'",
+      "interval": 60
   },
 
-  "custom/nvidia": {
-      "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% 🌡️\\2°C/g'",
-      "format": "{} 🖥️",
-      "interval": 2
+  "hyprland/window": {
+    "max-length": 60,
+    "rewrite": {
+      "(.*) - Brave": "$1",
+      "(.*) - Chromium": "$1",
+      "(.*) - Brave Search": "$1",
+      "(.*) - Outlook": "$1",
+      "(.*) Microsoft Teams": "$1"
+    },
+    "separate-outputs": true
   },
 
-  "custom/spotify": {
-      "format": "{icon} {}",
-      "escape": true,
-      "return-type": "json",
-      "max-length": 40,
-      "interval": 30, // Remove this if your script is endless and write in loop
-      "on-click": "playerctl -p spotify play-pause",
-      "on-click-right": "killall spotify",
-      "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-      "on-scroll-up" : "playerctl -p spotify next",
-      "on-scroll-down" : "playerctl -p spotify previous",
-      "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
-      "exec-if": "pgrep spotify"
+  "custom/empty": {
+    "format": ""
   },
 
-  "wlr/taskbar": {
-    "format": "{icon} {name}",
-    "icon-size": 16,
-    "all-outputs": false,
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": [
-      "wofi",
-      "rofi",
-      "kitty",
-      "com.mitchellh.ghostty",
-      "kitty-dropterm"
-      ],
+
+  "custom/settings": {
+    "format": " ",
+  },
+
+  "custom/tools": {
+    "format": " ",
+    "tooltip-format": "Tools"
   },
 
   "custom/file_manager": {
@@ -57,6 +47,13 @@
     "tooltip": true,
     "tooltip-format": "File Manager",
   },
+
+  "custom/exit": {
+    "format": " ",
+    "on-click": "wlogout",
+    "on-click-right": "hyprlock",
+    "tooltip-format": "Left: Power menu\nRight: Lock screen"
+    },
 
   "custom/tty": {
     "format": " ",
@@ -70,26 +67,5 @@
     "on-click": "xdg-open https://",
     "tooltip": true,
     "tooltip-format": "Launch Browser",
-  },
-
-  "custom/settings": {
-    "format": " ",
-    "on-click": "$HOME/.config/hypr/scripts/Kool_Quick_Settings.sh",
-    "tooltip": true,
-    "tooltip-format": "Launch KooL Hyprland Settings Menu",
-  },
-
-  "custom/reboot": {
-      "format": "󰜉",
-      "on-click": "systemctl reboot",
-      "tooltip": true,
-    "tooltip-format": "Left Click: Reboot",
-  },
-      
-  "custom/quit": {
-      "format": "󰗼",
-      "on-click": "hyprctl dispatch exit",
-      "tooltip": true,
-    "tooltip-format": "Left Click: Exit Hyprland",
   },
 }

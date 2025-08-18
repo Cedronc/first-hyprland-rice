@@ -37,4 +37,4 @@ output_path = '~/.config/vesktop/themes/matugen.css'
 [templates.dunst]
 input_path = '~/.config/matugen/templates/dunstrc'
 output_path = '~/.config/dunst/dunstrc'
-post_hook = 'dunstctl reload'
+post_hook = 'killall dunst; dunst &'

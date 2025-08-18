@@ -18,7 +18,8 @@ alias config="vim $HOME/.config"
 alias yank="yay -S"
 alias yeet="yay -R"
 
-PS1='[\u@\h \W]\$ '
+# PS1='[\u \W]\$ '
+PS1='\u@\H \W \n 🀚 '
 
 eval "$(starship init bash)"
 export PATH=$PATH:/home/cedric/.spicetify

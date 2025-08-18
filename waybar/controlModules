@@ -1,0 +1,30 @@
+{
+  "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+          "activated": "󰈈 ",
+          "deactivated": "󰈉 ",
+      },
+      "tooltip": true
+  },
+
+  "custom/updates": {
+      "format": "󰚰 {}",
+      "exec": "checkupdates | wc -l",
+      "interval": 3600,
+      "on-click": "ghostty -e sudo pacman -Syu",
+      "signal": 8
+  },
+
+  "custom/notifications": {
+    "format": " ",
+    "on-click": "dunstctl history-pop"
+  },
+
+  "custom/reboot": {
+      "format": "󰜉 ",
+      "on-click": "systemctl reboot",
+      "tooltip": true,
+    "tooltip-format": "Left Click: Reboot",
+  },
+}

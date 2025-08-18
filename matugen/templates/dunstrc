@@ -1,10 +1,10 @@
 [global]
     mouse_middle_click = context,close_current #close_current is optional
-
     follow = keyboard
     monitor = 0
     indicate_hidden = yes
-    transparency = 0.1
+    width = (300, 400)
+    height = (150, 200)
     separator_height = 10
     gap_size = 10
     padding = 16
@@ -20,7 +20,7 @@
     icon_theme = "Adwaita"
     icon_position = left
     min_icon_size = 0
-    max_icon_size = 64
+    max_icon_size = 128
     sticky_history = yes
     history_length = 20
     dmenu = dmenu = rofi -dmenu -p "dunst:"
@@ -37,12 +37,12 @@
     # origin = center
 
 [urgency_low]
-    background = "{{ colors.source.default.hex }}"
+    background = "{{ colors.on_primary.default.hex }}"
     foreground = "{{ colors.on_surface.default.hex }}"
     timeout = 3
 
 [urgency_normal]
-    background = "{{ colors..default.hex }}"
+    background = "{{ colors.on_primary.default.hex }}"
     foreground = "{{ colors.on_surface.default.hex }}"
     timeout = 3
 
